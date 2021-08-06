@@ -1,0 +1,11 @@
+def f(m,n):
+    l = [1]
+    for i in range(len(m)):
+        l.append(0)
+    for i in range(len(m)):
+        if l[i] != 0:
+            for word in n:
+                if m[i:i+len(word)] == word:
+                    l[i+len(word)] += l[i]
+    return l[len(m)]
+
